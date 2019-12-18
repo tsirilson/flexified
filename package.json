@@ -1,0 +1,28 @@
+{
+  "name": "flexified",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "@typescript-eslint/parser": "^2.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "rm -r ./lib && tsc",
+    "prepublishOnly": "rm -r ./lib && tsc"
+  },
+  "author": "",
+  "license": "ISC"
+}
