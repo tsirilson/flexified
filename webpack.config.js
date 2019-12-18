@@ -6,14 +6,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
@@ -21,10 +13,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    extensions: ['.tsx', '.ts']
   }
 }

@@ -1,5 +1,5 @@
 class Flexified {
-  static getClassNames (itemCount: number, mobileWidthThreshold: number): string[] {
+  static getClassNames (itemCount: number, mobileWidthThreshold = 768): string[] {
     const itemCountClass = 'flexified-item-count-' + itemCount
     const isMobile = this.isMobile(mobileWidthThreshold)
     const layoutClasses = this.getLayoutClasses(itemCount, isMobile)
