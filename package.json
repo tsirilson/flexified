@@ -1,7 +1,11 @@
 {
   "name": "flexified",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Flexified is a simple TypeScript-based library that helps you generate a CSS flexbox-based square grid.",
+  "keywords": ["typescript"],
+  "author": "David Tsirilson",
+  "license": "BSD-2-Clause",
+  "respository": "https://github.com/tsirilson/flexified",
   "main": "./index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {},
@@ -20,7 +24,5 @@
   "scripts": {
     "build": "rm -r ./lib && tsc",
     "prepublishOnly": "rm -r ./lib && tsc"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

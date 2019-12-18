@@ -1,7 +1,12 @@
 # Flexified
-![version](https://img.shields.io/npm/v/flexified)
 
-Flexified is a simple TypeScript-based library that helps you generate a perfect CSS flexbox-based grid.
+Flexified is a simple TypeScript-based library that helps you generate a CSS flexbox-based square grid.
+
+### Installation:
+
+```
+npm install flexified
+```
 
 ### Usage:
 
@@ -21,7 +26,7 @@ See the example below for implementation.
 
 __Methods__:
 
-Currently, Flexified has only one method called `getClassNames`:
+Currently, Flexified has one method called `getClassNames`:
 
 ```
 let classNames = Flexified.getClassNames(itemCount: number, mobileWidthThreshold: number)
@@ -37,11 +42,15 @@ __Options__:
 
  - `mobileWidthThreshold` (default: `768`) - the window width from which the mobile layout will be enabled - __Optional__
 
+__CSS Customization__:
+
 The CSS allows to customize the padding between the flexbox children. 
 
-Use the CSS var `--flexified-padding` in order to customize the padding.
+Use the var `--flexified-padding` in order to change the padding between the flexbox children.
 
 ### Example:
+
+__Vue.js component__
 
 ```
 <template>
@@ -50,7 +59,7 @@ Use the CSS var `--flexified-padding` in order to customize the padding.
     :class="classList"
     :style="'--flexified-padding:' + padding + 'px'"
   >
-    <div class="flexbox-item" v-for="n in itemCount" :key="n" />
+    <div class="flexified-item" v-for="n in itemCount" :key="n" />
   </div>
 </template>
 
@@ -60,26 +69,26 @@ import Flexified from 'flexified';
 import 'flexified/src/styles.scss';
 
 export default Vue.extend({
-  name: 'Flexbox',
+  name: 'Flexified',
   data: function () {
     return {
-      mobileWidthThreshold: 768,
-      itemCount: 34,
+      mobileWidthThreshold: 768, // Optional
+      itemCount: 8, // Reflect the number of children
       padding: 14,
       classList: ['']
     }
   },
   methods: {
     getClassList (): void {
-      this.classList = Flexified.getClassNames(this.itemCount, this.mobileWidthThreshold)
+      this.classList = Flexified.getClassNames(this.itemCount, this.mobileWidthThreshold) // Second parameter is optional
     },
-    onResize(event) {
-      this.getClassList()
+    onResize(event: any): void {
+      this.getClassList() 
     }
   },
   mounted() {
-    this.getClassList()
-    window.addEventListener('resize', this.onResize)
+    this.getClassList() // 
+    window.addEventListener('resize', this.onResize) // Update the flexbox on resize to enable responsivness
   }
 });
 </script>
