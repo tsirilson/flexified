@@ -22,7 +22,7 @@ __Methods__:
 Currently, Flexified has only one method called `getClassNames`:
 
 ```
-const classNames = Flexified.getClassNames(itemCount: number, mobileWidthThreshold: number)
+let classNames = Flexified.getClassNames(itemCount: number, mobileWidthThreshold: number)
 ```
 
 This method returns a string array with a list of classes you will apply to your flexbox container.
