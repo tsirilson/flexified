@@ -1,4 +1,6 @@
 # Flexified
+![version](https://img.shields.io/npm/v/flexified)
+
 Flexified is a simple TypeScript-based library that helps you generate a perfect CSS flexbox-based grid.
 
 ### Usage:
