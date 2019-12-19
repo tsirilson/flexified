@@ -5,6 +5,7 @@
   "keywords": ["typescript"],
   "author": "David Tsirilson",
   "license": "BSD-2-Clause",
+  "homepage": "https://tsirilson.github.io/flexified/",
   "respository": "https://github.com/tsirilson/flexified",
   "main": "./index.js",
   "types": "./lib/index.d.ts",
