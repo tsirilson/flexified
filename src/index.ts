@@ -1,9 +1,23 @@
+interface Options {
+  itemCount: number
+  mobileWidthThreshold: number
+}
+
 class Flexified {
-  static getClassNames (itemCount: number, mobileWidthThreshold = 768): string[] {
-    const itemCountClass = 'flexified-item-count-' + itemCount
-    const isMobile = this.isMobile(mobileWidthThreshold)
-    const layoutClasses = this.getLayoutClasses(itemCount, isMobile)
+  static getClassNames (options: object): string[] {
+    const customizationOptions = this.getOptions(options)
+    const itemCountClass = 'flexified-item-count-' + customizationOptions.itemCount
+    const isMobile = this.isMobile(customizationOptions.mobileWidthThreshold)
+    const layoutClasses = this.getLayoutClasses(customizationOptions.itemCount, isMobile)
     return [...layoutClasses, itemCountClass]
+  }
+
+  private static getOptions(options: object){
+    const defaultOptions: Options = {
+      itemCount: 0,
+      mobileWidthThreshold: 768
+    }
+    return Object.assign({}, defaultOptions, options)
   }
 
   private static getLayoutClasses (itemCount: number, isMobile: boolean): string[] {

@@ -26,17 +26,13 @@ See the example below for implementation.
 
 __Methods__:
 
-Currently, Flexified has one method called `getClassNames`:
-
-```
-let classNames = Flexified.getClassNames(itemCount: number, mobileWidthThreshold: number)
-```
+Currently, Flexified has one static method called `getClassNames`.
 
 This method returns a string array with a list of classes you will apply to your flexbox container.
 
 __Options__:
 
-`getClassNames` requires two parameters:
+`getClassNames` allows the next options:
 
  - `itemCount` - the number of items in your flexbox container - __Required__
 
@@ -80,15 +76,15 @@ export default Vue.extend({
   },
   methods: {
     getClassList (): void {
-      this.classList = Flexified.getClassNames(this.itemCount, this.mobileWidthThreshold) // Second parameter is optional
+      this.classList = Flexified.getClassNames({itemCount: this.itemCount, mobileWidthThreshold: this.mobileWidthThreshold})
     },
     onResize(event: any): void {
       this.getClassList() 
     }
   },
   mounted() {
-    this.getClassList() // 
-    window.addEventListener('resize', this.onResize) // Update the flexbox on resize to enable responsivness
+    this.getClassList() // Initialize the flexbox styles
+    window.addEventListener('resize', this.onResize) // Update the flexbox on resize to allow responsivness
   }
 });
 </script>

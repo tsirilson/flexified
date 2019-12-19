@@ -1,5 +1,6 @@
 declare class Flexified {
-    static getClassNames(itemCount: number, mobileWidthThreshold?: number): string[];
+    static getClassNames(options: object): string[];
+    private static getOptions;
     private static getLayoutClasses;
     private static isMobile;
 }
