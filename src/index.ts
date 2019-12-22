@@ -26,63 +26,62 @@ class Flexified {
     classList = []
 
     if(isMobile){
-      classList = [...classList, 'flexified-mobile']
-        if(itemCount % 2 === 0){
-            classList = [...classList, 'flexified-items-even']
-        }else{
-            classList = [...classList, 'flexified-items-odd', 'flexified-wide-last-item']
-        }
+      classList.push('flexified-mobile')
 
-        return classList
-    }else{
-        if (itemCount == 2) {
-            return [...classList, 'flexified-items-even']
-        }
+      if(itemCount % 2 === 0){
+          classList.push('flexified-items-even')
+      }else{
+          classList.push('flexified-items-odd', 'flexified-wide-last-item')
+      }
 
-        // Check the edge cases for this statement
-        if (itemCount % 2 !== 0 && itemCount % 3 !== 0) {
-            classList = [...classList, 'flexified-items-odd']
-            if (itemCount >= 5) {
-                return [...classList, 'flexified-wide-last-item']
-            }
-            return classList
-        }
-
-        if (itemCount % 3 === 0) {
-            return [...classList, 'flexified-items-odd']
-        }
-
-        if (itemCount % 4 === 0) {
-            return [...classList, 'flexified-items-even']
-        }
-
-        if (itemCount % 10 === 0 && itemCount > 10) {
-            return [...classList, 'flexified-items-even']
-        }
-
-        if (itemCount % 5 === 0) {
-            classList = [...classList, 'flexified-items-odd']
-            if (itemCount % 10 === 0) {
-                return [...classList, 'flexified-wide-last-item']
-            }
-            return classList
-        }
-
-        if (itemCount % 7 === 0) {
-            classList = [...classList, 'flexified-items-odd', 'flexified-wide-last-item']
-            return classList
-        }
-
-        if (itemCount == 22 || itemCount == 26 || itemCount == 34) {
-            return [...classList, 'flexified-items-odd', 'flexified-wide-last-item']
-        }
-
-        if (itemCount > 2 && itemCount % 2 === 0) {
-            return [...classList, 'flexified-items-even']
-        }
-
-        return classList
+      return classList
     }
+
+    if (itemCount == 2) {
+      return ['flexified-items-even']
+    }
+
+    if (itemCount % 2 !== 0 && itemCount % 3 !== 0) {
+      classList.push('flexified-items-odd')
+      if (itemCount >= 5) {
+          classList.push('flexified-wide-last-item')
+      }
+      return classList
+    }
+
+    if (itemCount % 3 === 0) {
+      return ['flexified-items-odd']
+    }
+
+    if (itemCount % 4 === 0) {
+      return ['flexified-items-even']
+    }
+
+    if (itemCount % 10 === 0 && itemCount > 10) {
+      return ['flexified-items-even']
+    }
+
+    if (itemCount % 5 === 0) {
+      classList.push('flexified-items-odd')
+      if (itemCount % 10 === 0) {
+          classList.push('flexified-wide-last-item')
+      }
+      return classList
+    }
+
+    if (itemCount % 7 === 0) {
+      return ['flexified-items-odd', 'flexified-wide-last-item']
+    }
+
+    if (itemCount == 22 || itemCount == 26 || itemCount == 34) {
+      return ['flexified-items-odd', 'flexified-wide-last-item']
+    }
+
+    if (itemCount > 2 && itemCount % 2 === 0) {
+      return ['flexified-items-even']
+    }
+
+    return classList
   }
 
   private static isMobile(mobileWidthThreshold: number): boolean{
