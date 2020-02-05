@@ -4,6 +4,9 @@ interface Options {
 }
 
 class Flexified {
+  private static evenNumberEdgeCases = [2, 28]
+  private static oddNumberEdgeCases = [5, 11, 14, 17, 23, 26, 29]
+
   static getClassNames (options: object): string[] {
     const customizationOptions = this.getOptions(options)
     const itemCountClass = 'flexified-item-count-' + customizationOptions.itemCount
@@ -41,12 +44,13 @@ class Flexified {
       return classList
     }
 
-    // Number-specific rules
-    if (itemCount == 2 || itemCount == 28) {
+    // Special cases
+    if (this.evenNumberEdgeCases.indexOf(itemCount) > -1) {
       return ['flexified-items-even']
     }
 
-    if (itemCount == 5 || itemCount == 23|| itemCount == 26 || itemCount == 29) {
+    // Special cases
+    if (this.oddNumberEdgeCases.indexOf(itemCount) > -1) {
       return ['flexified-items-odd', 'flexified-two-thirds-width-last-item']
     }
 
@@ -59,14 +63,6 @@ class Flexified {
         return ['flexified-items-even']
       }
       return ['flexified-items-odd', 'flexified-full-width-last-item']
-    }
-
-    // Non-prime and odd numbers, full width last item
-    if (itemCount == 7 || itemCount % 5 === 0 || itemCount % 22 === 0) {
-      if (itemCount % 3 === 0) {
-        return ['flexified-items-odd']
-      }
-      return ['flexified-items-odd', 'flexified-two-thirds-width-last-item']
     }
 
     // Prime number

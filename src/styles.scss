@@ -89,7 +89,7 @@
           &.flexified-wide-last-item{
               .flexified-child{
                   &:last-child {
-                      width: calc(100% - calc((var(--flexified-padding)) * 0.5));
+                      width: 100%;
       
                       &:before{
                           flex-grow: 1;
