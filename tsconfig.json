@@ -1,15 +1,18 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
+        "target": "es5",
         "sourceMap": false,
+        "lib": ["es5", "es6", "dom"],
+        "rootDir": "./src",
+        "outDir": "./lib",
+        "declaration": true,
+        "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "declaration": true,
-        "outDir": "lib",
-        "lib": ["es5", "es6", "dom"],
-        "esModuleInterop": true
+        "noImplicitReturns": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
     },
-    "include": ["src/*.ts"],
-    "exclude": ["node_modules", "dist", "index.js"]
+    "exclude": ["node_modules", "lib", "index.js"]
 }

@@ -4,7 +4,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended"
   ],
   parserOptions: {
-    ecmaVersion: 2015,
+    ecmaVersion: 5,
     sourceType: "module"
   }
 };

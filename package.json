@@ -9,23 +9,35 @@
   "license": "BSD-2-Clause",
   "homepage": "https://tsirilson.github.io/flexified/",
   "respository": "https://github.com/tsirilson/flexified",
-  "main": "./index.js",
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "@typescript-eslint/parser": "^2.11.0",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass-loader": "^8.0.0",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "rm -r ./lib && tsc",
-    "prepublishOnly": "rm -r ./lib && tsc"
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "prePublish": "npm run build"
   }
 }

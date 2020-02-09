@@ -1,9 +1,11 @@
+import './styles.scss'
+
 interface Options {
   itemCount: number
   mobileWidthThreshold: number
 }
 
-class Flexified {
+export default class Flexified {
   private static evenNumberEdgeCases = [2, 28]
   private static oddNumberEdgeCases = [5, 11, 14, 17, 23, 26, 29]
 
@@ -20,7 +22,7 @@ class Flexified {
       itemCount: 0,
       mobileWidthThreshold: 768
     }
-    return Object.assign({}, defaultOptions, options)
+    return {...defaultOptions, ...options}
   }
 
   private static getLayoutClasses (itemCount: number, isMobile: boolean): string[] {
@@ -84,6 +86,8 @@ class Flexified {
       classList.push('flexified-items-even')
       return classList
     }
+
+    return classList
   }
 
   private static isMobile(mobileWidthThreshold: number): boolean{
@@ -96,7 +100,7 @@ class Flexified {
     return isMobileWidth
   }
 
-  private static isPrimeNumber (number: number): boolean {
+  private static isPrimeNumber (number : number): boolean {
     const sqrtnum = Math.floor(Math.sqrt(number))
     let prime = number != 1
     for(let i = 2; i < sqrtnum + 1; i++) {
@@ -108,5 +112,3 @@ class Flexified {
     return prime;
   }
 }
-
-export = Flexified
