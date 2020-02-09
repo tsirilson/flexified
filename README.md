@@ -14,10 +14,10 @@ Import the library and CSS:
 
 ```
 import Flexified from 'flexified'
-import 'flexified/src/styles.scss'
+import 'flexified/src/styles.css'
 ```
 
-Import the library and __SCSS__ (CSS currently not supported):
+Add the next css classes to your layout:
 
  - `flexified-wrapper`: applied to your flexbox container
  - `flexified-child`: applied to your flexbox children
@@ -66,7 +66,7 @@ import 'flexified/src/styles.scss';
 
 export default Vue.extend({
   name: 'Flexified',
-  data: function () {
+  data: function() {
     return {
       mobileWidthThreshold: 768, // Optional
       itemCount: 8, // Reflect the number of children
@@ -75,10 +75,10 @@ export default Vue.extend({
     }
   },
   methods: {
-    getClassList (): void {
+    getClassList(): {
       this.classList = Flexified.getClassNames({itemCount: this.itemCount, mobileWidthThreshold: this.mobileWidthThreshold})
     },
-    onResize(event: any): void {
+    onResize(): {
       this.getClassList() 
     }
   },
