@@ -1,6 +1,6 @@
 {
   "name": "flexified",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Flexified is a simple TypeScript-based library that helps you generate a CSS flexbox-based square grid.",
   "keywords": [
     "typescript"
