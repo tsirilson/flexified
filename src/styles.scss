@@ -22,7 +22,7 @@
                   height: auto;
 
                   &:before{
-                      padding-top: 33%;
+                      padding-top: calc(33% - (var(--flexified-padding)/2));
                   }
               }
           }
@@ -35,7 +35,7 @@
                   margin-left: var(--flexified-padding);
 
                   &:before{
-                      padding-top: 50%;
+                      padding-top: calc(50% - (var(--flexified-padding)/2));
                   }
               }
           }
@@ -94,7 +94,7 @@
                       &:before{
                           flex-grow: 1;
                           height: auto;
-                          padding-top: 50%;
+                          padding-top: calc(50% - (var(--flexified-padding) / 1.5));
                       }
                   }
               }
