@@ -22,7 +22,8 @@
                   height: auto;
 
                   &:before{
-                      padding-top: calc(33% - (var(--flexified-padding)/2));
+                      padding-top: calc(33% - (14px / 2));
+                      padding-top: calc(33% - (var(--flexified-padding) / 2));
                   }
               }
           }
@@ -32,10 +33,12 @@
               &:last-child {
                   flex-grow: 1;
                   height: auto;
+                  margin-left: 14px;
                   margin-left: var(--flexified-padding);
 
                   &:before{
-                      padding-top: calc(50% - (var(--flexified-padding)/2));
+                      padding-top: calc(50% - (14px / 2));
+                      padding-top: calc(50% - (var(--flexified-padding) / 2));
                   }
               }
           }
@@ -43,7 +46,9 @@
 
       &.flexified-items-odd{
           .flexified-child {
-              width: calc(100% / 3 - (var(--flexified-padding) * 0.66 ));
+              width: calc(100% / 3 - (14px * 0.66));
+              width: calc(100% / 3 - (var(--flexified-padding) * 0.66));
+              margin-bottom: 14px;
               margin-bottom: var(--flexified-padding);
           }
 
@@ -60,12 +65,15 @@
 
       &.flexified-items-even{
           .flexified-child {
-              width: calc(100% / 4 - (var(--flexified-padding) * 0.75 ));
+              width: calc(100% / 4 - (14px * 0.75));
+              width: calc(100% / 4 - (var(--flexified-padding) * 0.75));
+              margin-bottom: 14px;
               margin-bottom: var(--flexified-padding);
           }
 
           &.flexified-item-count-2{
               .flexified-child{
+                  width: calc(100% / 2 - (14px / 2));
                   width: calc(100% / 2 - (var(--flexified-padding) / 2));
               }
           }
@@ -77,11 +85,14 @@
       justify-content: center;
 
       .flexified-child {
+          width: calc(100% / 2 - (14px) * 0.75);
           width: calc(100% / 2 - (var(--flexified-padding)) * 0.75);
-          margin-bottom: calc((var(--flexified-padding)) * 1.5);
+          margin-bottom: calc(14px * 1.5);
+          margin-bottom: calc(var(--flexified-padding) * 1.5);
 
           &:nth-child(even){
-              margin-left: calc((var(--flexified-padding)) * 1.5);
+              margin-left: calc(14px * 1.5);
+              margin-left: calc(var(--flexified-padding) * 1.5);
           }
       }
 
@@ -94,6 +105,7 @@
                       &:before{
                           flex-grow: 1;
                           height: auto;
+                          padding-top: calc(50% - (14px / 1.5));
                           padding-top: calc(50% - (var(--flexified-padding) / 1.5));
                       }
                   }
